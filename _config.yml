@@ -1,0 +1,27 @@
+# Site Settings
+#
+title: Urdu Website
+subtitle: Information about Urdu authors and books.
+url: https://hashhar.github.io/test-jekyll/
+baseurl: /test-jekyll
+
+# RSS Feed config
+description: Information about Urdu authors and books.
+
+# Google Analytics
+# google_analytics_tracking_id: UA-xxxxxxxx-x
+
+#
+# Jekyll Settings
+#
+collections:
+  author:
+    output: true
+    permalink: /authors/:path/
+  book:
+    output: true
+    permalink: /books/:path/
+
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap

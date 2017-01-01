@@ -1,0 +1,21 @@
+<!-- Two columns for author info and books list -->
+<div class="row">
+    <!-- This column holds author info -->
+    <div class="information col-xs-8">
+        <h2 class="author-title">{{ page.title }}</h2>
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="author-image" />
+        <h3 class="author-introduction">Introdcution</h3>
+        {{ page.introduction }}
+    </div>
+    <!-- This column holds books list -->
+    <div class="sidebar col-xs-4">
+        <h4>Books by {{ page.title }}:</h4>
+        <ul class="books-sidebar">
+        {% for bookname in site.book %}
+            <li>
+                <a href="{{ bookname.url }}">{{ bookname.title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
