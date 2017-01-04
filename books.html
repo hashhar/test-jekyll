@@ -7,13 +7,13 @@ permalink: /books/
 <ul class="books-authors">
 {% for writer in site.author %}
     <li>
-        <a href="{{ writer.url }}">{{ writer.title }}</a>
+        <a href="{{ site.baseurl }}{{ writer.url }}">{{ writer.title }}</a>
     </li>
     <ul class="books">
     {% for bookname in site.book %}
     {% if bookname.author == writer.title %}
         <li>
-            <a href="{{ bookname.url }}">{{ bookname.title }}</a>
+            <a href="{{ site.baseurl }}{{ bookname.url }}">{{ bookname.title }}</a>
         </li>
     {% endif %}
     {% endfor %}

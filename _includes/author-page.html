@@ -3,7 +3,7 @@
     <!-- This column holds author info -->
     <div class="information col-xs-8">
         <h2 class="author-title">{{ page.title }}</h2>
-        <img src="{{ page.image }}" alt="{{ page.title }}" class="author-image" />
+        <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="author-image" />
         <h3 class="author-introduction">Introdcution</h3>
         {{ page.introduction }}
     </div>
@@ -13,7 +13,7 @@
         <ul class="books-sidebar">
         {% for bookname in site.book %}
             <li>
-                <a href="{{ bookname.url }}">{{ bookname.title }}</a>
+                <a href="{{ site.baseurl }}{{ bookname.url }}">{{ bookname.title }}</a>
             </li>
         {% endfor %}
         </ul>
