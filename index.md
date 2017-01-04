@@ -3,6 +3,6 @@ layout: default
 title: "Urdu Website"
 ---
 
-# Homepage
-
-Some stuff.
+<script>
+    window.location.replace("{{ site.baseurl }}/authors/Quamar Jahaan");
+</script>

@@ -3,18 +3,71 @@
     <!-- This column holds author info -->
     <div class="information col-xs-8">
         <h2 class="author-title">{{ page.title }}</h2>
-        <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="author-image" />
-        <h3 class="author-introduction">Introdcution</h3>
-        {{ page.introduction }}
-    </div>
+            {% if page.image %}
+            <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="author-image" />
+            {% endif %}
+            <hr/>
+        <h3 class="author-introduction">Introduction</h3>
+            <p>
+                <strong>Birth:</strong> {{ page.introduction.date_of_birth }}{% if page.introduction.date_of_death %} - {{ page.introduction.date_of_death }}{% endif %}
+                <br/>{{ page.introduction.place_of_birth }}<br/>
+                <strong>Language:</strong> {{ page.introduction.languages }}<br/>
+                <strong>Styles:</strong> {{ page.introduction.style }}<br/>
+            </p>
+        <h3 class="author-works">Important Works</h3>
+            <p>
+                {% if page.important_works.novels %}
+                <strong>Novels:</strong>
+                    <ul>
+                        {% for novel in page.important_works.novels %}
+                        <li>{{ novel }}</li>
+                        {% endfor %}
+                    </ul>
+                <!--{{ page.important_works.novels }}<br/>-->
+                {% endif %}
+
+                {% if page.important_works.poems %}
+                <strong>Poems:</strong>
+                    <ul>
+                        {% for poem in page.important_works.poems %}
+                        <li>{{ poem }}</li>
+                        {% endfor %}
+                    </ul>
+                <!--{{ page.important_works.poems }}<br/>-->
+                {% endif %}
+
+                {% if page.important_works.short_stories %}
+                <strong>Short Stories:</strong>
+                    <ul>
+                        {% for short_story in page.important_works.short_stories %}
+                        <li>{{ short_story }}</li>
+                        {% endfor %}
+                    </ul>
+                <!--{{ page.important_works.short_stories }}<br/>-->
+                {% endif %}
+            </p>
+
+        {% if page.awards %}
+        <h3 class="author-awards">Awards and Honours</h3>
+            <p>
+                <ul>
+                    {% for award in page.awards %}
+                    <li>{{ award }}</li>
+                    {% endfor %}
+                </ul>
+            </p>
+        {% endif %}
+        </div>
     <!-- This column holds books list -->
     <div class="sidebar col-xs-4">
         <h4>Books by {{ page.title }}:</h4>
         <ul class="books-sidebar">
         {% for bookname in site.book %}
+            {% if bookname.author == page.title %}
             <li>
                 <a href="{{ site.baseurl }}{{ bookname.url }}">{{ bookname.title }}</a>
             </li>
+            {% endif %}
         {% endfor %}
         </ul>
     </div>
