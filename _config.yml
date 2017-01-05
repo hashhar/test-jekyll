@@ -4,6 +4,10 @@ title: Urdu Website
 subtitle: Information about Urdu authors and books.
 baseurl: /test-jekyll
 
+# Comment both lines below to render in English. Uncomment for Urdu.
+# lang: ur
+# dir: rtl
+
 # RSS Feed config
 description: Information about Urdu authors and books.
 
