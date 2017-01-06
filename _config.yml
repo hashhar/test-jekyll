@@ -8,15 +8,7 @@ baseurl: /test-jekyll
 # lang: ur
 # dir: rtl
 
-# RSS Feed config
-description: Information about Urdu authors and books.
-
-# Google Analytics
-# google_analytics_tracking_id: UA-xxxxxxxx-x
-
-#
 # Jekyll Settings
-#
 collections:
   author:
     output: true
