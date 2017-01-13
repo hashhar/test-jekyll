@@ -7,17 +7,66 @@
             <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="author-image" />
             {% endif %}
             <hr/>
+        {% if site.lang == 'ur' %}
+        <h3 class="author-introduction">تعارف</h3>
+        {% else %}
         <h3 class="author-introduction">Introduction</h3>
+        {% endif %}
             <p>
-                <strong>Birth:</strong> {{ page.introduction.date_of_birth }}{% if page.introduction.date_of_death %} - {{ page.introduction.date_of_death }}{% endif %}
-                <br/>{{ page.introduction.place_of_birth }}<br/>
-                <strong>Language:</strong> {{ page.introduction.languages }}<br/>
-                <strong>Styles:</strong> {{ page.introduction.style }}<br/>
+                {% if page.introduction.parents %}
+                    {% if site.lang == 'ur' %}
+                        <strong>والدین:</strong>
+                    {% else %}
+                        <strong>Parents:</strong>
+                    {% endif %}
+                    {{ page.introduction.parents }}<br/>
+                {% endif %}
+
+                {% if site.lang == 'ur' %}
+                    <strong>جنم:</strong>
+                {% else %}
+                    <strong>Birth:</strong>
+                {% endif %}
+                {{ page.introduction.date_of_birth }}{% if page.introduction.date_of_death %} - {{ page.introduction.date_of_death }}<br/>{% endif %}
+                {{ page.introduction.place_of_birth }}<br/>
+
+                {% if site.lang == 'ur' %}
+                    <strong>زبان:</strong>
+                {% else %}
+                    <strong>Language:</strong>
+                {% endif %}
+                {{ page.introduction.languages }}<br/>
+
+                {% if page.introduction.style %}
+                    {% if site.lang == 'ur' %}
+                        <strong>طرز تحریر:</strong>
+                    {% else %}
+                        <strong>Writing Style:</strong>
+                    {% endif %}
+                    {{ page.introduction.style }}<br/>
+                {% endif %}
             </p>
-        <h3 class="author-works">Important Works</h3>
+        {% if site.lang == 'ur' %}
+            <h3 class="author-works">اہم کام</h3>
+        {% else %}
+            <h3 class="author-works">Important Works</h3>
+        {% endif %}
             <p>
+                {% if page.important_works.normal %}
+                    <ul>
+                        {% for work in page.important_works.normal %}
+                        <li>{{ work }}</li>
+                        {% endfor %}
+                    </ul>
+                <!--{{ page.important_works.normal }}<br/>-->
+                {% endif %}
+
                 {% if page.important_works.novels %}
-                <strong>Novels:</strong>
+                    {% if site.lang == 'ur' %}
+                    <strong>ناول:</strong>
+                    {% else %}
+                    <strong>Novels:</strong>
+                    {% endif %}
                     <ul>
                         {% for novel in page.important_works.novels %}
                         <li>{{ novel }}</li>
@@ -27,7 +76,11 @@
                 {% endif %}
 
                 {% if page.important_works.poems %}
-                <strong>Poems:</strong>
+                    {% if site.lang == 'ur' %}
+                    <strong>نظمیں:</strong>
+                    {% else %}
+                    <strong>Poems:</strong>
+                    {% endif %}
                     <ul>
                         {% for poem in page.important_works.poems %}
                         <li>{{ poem }}</li>
@@ -37,7 +90,11 @@
                 {% endif %}
 
                 {% if page.important_works.short_stories %}
-                <strong>Short Stories:</strong>
+                    {% if site.lang == 'ur' %}
+                    <strong>مختصر کہانیاں:</strong>
+                    {% else %}
+                    <strong>Short Stories:</strong>
+                    {% endif %}
                     <ul>
                         {% for short_story in page.important_works.short_stories %}
                         <li>{{ short_story }}</li>
@@ -48,19 +105,27 @@
             </p>
 
         {% if page.awards %}
-        <h3 class="author-awards">Awards and Honours</h3>
-            <p>
-                <ul>
-                    {% for award in page.awards %}
-                    <li>{{ award }}</li>
-                    {% endfor %}
-                </ul>
-            </p>
+            {% if site.lang == 'ur' %}
+            <h3 class="author-awards">ایوارڈ اور اعزازات</h3>
+            {% else %}
+            <h3 class="author-awards">Awards and Honours</h3>
+            {% endif %}
+                <p>
+                    <ul>
+                        {% for award in page.awards %}
+                        <li>{{ award }}</li>
+                        {% endfor %}
+                    </ul>
+                </p>
         {% endif %}
     </div>
     <!-- This column holds books list -->
     <div class="sidebar col-xs-4">
-        <h4>Books by {{ page.title }}:</h4>
+        {% if site.lang == 'ur' %}
+        <h4>کتب</h4>
+        {% else %}
+        <h4>Books</h4>
+        {% endif %}
         <ul class="books-sidebar">
         {% for bookname in site.book %}
             {% if bookname.author == page.title %}
