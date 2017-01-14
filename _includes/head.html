@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-{% if site.lang %}
+{% if site.lang == 'ur' %}
 <html lang="{{ site.lang }}" dir="{{ site.dir }}">
 {% else %}
 <html>
@@ -11,8 +11,12 @@
     <meta name="keywords" content="{{ page.keywords }}">
     {% endif %}
     <link href="{{ site.baseurl }}/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/stylesheets/slate.css">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/stylesheets/custom.css">
+    {% if site.lang == 'ur' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/stylesheets/slateUrdu.css">
+    {% else %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/stylesheets/slate.css">
+    {% endif %}
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
