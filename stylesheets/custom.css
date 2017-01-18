@@ -44,8 +44,7 @@ ul.books-authors > li {
 }
 
 .books-sidebar {
-    background-color: #f2f2f2;
-    border: 1px solid darkslategray;
+    list-style: none;
 }
 
 /* Style for the author pages. */
@@ -63,4 +62,21 @@ ul.books-authors > li {
 
 hr {
     border-top: 1px solid lightgray !important;
+}
+
+.author-introduction, .author-works, .author-awards {
+    padding: 0px 5px;
+    border-top-right-radius: 10px;
+
+    /*background: #20b2aa;
+    background: -webkit-linear-gradient(top,rgba(32,178,170,0),rgba(32,178,170,1));
+    background: -o-linear-gradient(bottom,rgba(32,178,170,0),rgba(32,178,170,1));
+    background: -moz-linear-gradient(bottom,rgba(32,178,170,0),rgba(32,178,170,1));
+    background: linear-gradient(to bottom, rgba(32,178,170,0), rgba(32,178,170,1));*/
+
+    background: #7e4999;
+    background: -webkit-linear-gradient(left,rgba(126,73,153,0),rgba(126,73,153,1));
+    background: -o-linear-gradient(right,rgba(126,73,153,0),rgba(126,73,153,1));
+    background: -moz-linear-gradient(right,rgba(126,73,153,0),rgba(126,73,153,1));
+    background: linear-gradient(to right, rgba(126,73,153,0), rgba(126,73,153,1));
 }
