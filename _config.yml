@@ -2,7 +2,7 @@
 #
 title: Urdu Website
 subtitle: Information about Urdu authors and books.
-baseurl: /test-jekyll
+#baseurl: /test-jekyll
 
 # Comment both lines below to render in English. Uncomment for Urdu.
 lang: ur
