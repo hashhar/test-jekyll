@@ -63,6 +63,9 @@ call bundle install
 cd %DEPLOYMENT_SOURCE%
 cd
 
+ECHO Fix baseurl before building
+@powershell -ExecutionPolicy ByPass -File fixbaseurl.ps1
+
 ECHO Running Jekyll
 call bundle exec jekyll build
 
